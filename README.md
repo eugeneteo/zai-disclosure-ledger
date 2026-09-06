@@ -62,5 +62,9 @@ python3 scripts/parse.py  # rebuild data/ and STATS.md
 
 ## License / use
 
-Personal reference archive. Content originates from Z.ai's public disclosure
-ledger; individual findings remain subject to their own disclosure terms.
+The extraction scripts (`scripts/`) are licensed under the **GNU GPL v3**
+(see `LICENSE`). The archived data (`raw/`, `data/vulnerabilities.json`,
+`data/vulnerabilities.csv`) is **not** covered by that license — it
+originates from Z.ai's public disclosure ledger, and individual findings
+remain subject to their own disclosure terms. This repo is a personal
+reference archive.

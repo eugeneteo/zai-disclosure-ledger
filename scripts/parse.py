@@ -188,9 +188,16 @@ def main():
         f"Chinese mojibake: {sample.get('researcher')}"
 
     (REPO / "data").mkdir(exist_ok=True)
+    source = "https://web.archive.org/web/20260814211237/https://cvd.z.ai/ledger/"
+    # capturedAt is derived from the Wayback timestamp embedded in the source
+    # URL so re-parsing is byte-reproducible (it is the capture time, not the
+    # parse time; datetime.now() here would dirty the tree on every re-run).
+    m = re.search(r"/web/(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})/", source)
+    captured_at = (f"{m.group(1)}-{m.group(2)}-{m.group(3)}T"
+                   f"{m.group(4)}:{m.group(5)}:{m.group(6)}+00:00")
     doc = {
-        "source": "https://web.archive.org/web/20260814211237/https://cvd.z.ai/ledger/",
-        "capturedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "source": source,
+        "capturedAt": captured_at,
         "siteCapture": "2026-08-14",
         "entryCount": len(entries),
         "entries": entries,

@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 """Parse the archived Z.ai CVD ledger HTML (Next.js RSC payload) into data/.
 
+SPDX-License-Identifier: GPL-3.0-only
+This file is part of zai-disclosure-ledger
+<https://github.com/eugeneteo/zai-disclosure-ledger>, licensed under the
+GNU General Public License v3.0. See the LICENSE file at the repo root or
+<https://www.gnu.org/licenses/gpl-3.0.html>.
+
 Usage: scripts/parse.py [raw/ledger-20260814.html]
 """
 import csv
